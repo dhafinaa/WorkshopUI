@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us - SMTOWN</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
-      margin: 0;
       font-family: 'Open Sans', sans-serif;
       background-color: #f2f2f2;
       color: #1a1a1a;
     }
 
+    /* Navbar */
     .navbar {
     display: flex;
     justify-content: space-between;
@@ -29,6 +34,12 @@
       font-weight: bold;
     }
 
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
     .nav-links {
       list-style: none;
       display: flex;
@@ -36,7 +47,7 @@
       align-items: center;
     }
 
-    .nav-links a {
+    .nav-links li a {
       text-decoration: none;
       color: black;
       font-weight: 500;
@@ -72,8 +83,7 @@
       font-size: 48px;
       position: relative;
       z-index: 1;
-      /* border-bottom: 4px solid #2dd4bf; */
-      padding-bottom: 8px;
+      text-align: center;
     }
 
     /* About Section */
@@ -86,8 +96,9 @@
       max-width: 1000px;
       margin: auto;
       display: flex;
-      gap: 30px;
       flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
     }
 
     .about-container img {
@@ -103,6 +114,12 @@
 
     .about-text h2 {
       font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .about-text h3 {
+      font-size: 20px;
       font-weight: bold;
       margin-bottom: 20px;
     }
@@ -130,7 +147,7 @@
       max-width: 1200px;
       margin: auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 40px;
     }
 
@@ -169,19 +186,53 @@
       font-weight: bold;
     }
 
+    /* Responsive Styles */
     @media (max-width: 768px) {
-      .hero h1, .testimonials-section h1 {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 10px 0;
+      }
+
+      .hero h1,
+      .testimonials-section h1 {
+        font-size: 32px;
         text-align: center;
+      }
+
+      .about-container {
+        flex-direction: column;
+        align-items: center;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">SMTOWN</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <nav>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="home.html">Home</a></li>
         <li><a href="service.html">Services</a></li>
         <li><a href="about.html">About</a></li>
@@ -203,17 +254,46 @@
       <div class="about-text">
         <h3>We are a global leader in K-pop entertainment, shaping the industry with over decades of expertise in artist management, music production, and world-class performances.</h3>
         <p>If you're looking for the best in music, artist development, and groundbreaking entertainment experiences, SMTOWN is here to bring you closer to the heart of K-pop. Our team of industry experts and visionary creators continuously push boundaries to redefine global entertainment.</p>
+        <h2>Mission</h2>
+        <p>Our mission is to lead the global entertainment industry by nurturing exceptional talent, producing innovative content, and connecting K-pop with fans worldwide.</p>
+        <h2>Vision</h2>
+        <p>We envision a world where music transcends boundaries. SMTOWN is dedicated to shaping the future of entertainment by embracing creativity, diversity, and technological innovation.</p>
       </div>
-      <div>
-        <div class="about-text">
-            <h2>Mission.</h2>
-            <p>Our mission is to lead the global entertainment industry by nurturing exceptional talent, producing innovative content, and connecting K-pop with fans worldwide.</p>
-            <h2>Vision.</h2>
-            <p>We envision a world where music transcends boundaries. SMTOWN is dedicated to shaping the future of entertainment by embracing creativity, diversity, and technological innovation.</p>
+    </div>
+  </section>
+
+  <!-- Testimonials (Optional - kamu bisa aktifkan kapan aja) -->
+  <!--
+  <section class="testimonials-section">
+    <h1>What Our Fans Say</h1>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <div class="stars"></div>
+        <p>"SMTOWN always delivers top-tier performances. Their artists are truly world-class!"</p>
+        <div class="profile">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Fan">
+          <span class="profile-name">Lina</span>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars"></div>
+        <p>"The creativity and production quality are unmatched. Proud to be a fan!"</p>
+        <div class="profile">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Fan">
+          <span class="profile-name">James</span>
           </div>
         </div>
     </div>
   </section>
+  -->
+
+  <!-- Script -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("active");
+    }
+  </script>
 
 </body>
 </html>

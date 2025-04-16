@@ -5,12 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Services - SMTOWN</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Open Sans', sans-serif;
       background-color: #f9f9f9;
     }
 
+    /* Navbar */
     .navbar {
     display: flex;
     justify-content: space-between;
@@ -25,6 +31,12 @@
     .logo {
       font-size: 24px;
       font-weight: bold;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
     }
 
     .nav-links {
@@ -44,6 +56,33 @@
       border: 1px solid black;
       padding: 6px 12px;
       border-radius: 4px;
+    }
+
+    /* Responsive Navbar */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 10px 0;
+      }
     }
 
     /* Hero Section */
@@ -140,10 +179,12 @@
 </head>
 <body>
 
+  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">SMTOWN</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <nav>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="home.html">Home</a></li>
         <li><a href="service.html">Services</a></li>
         <li><a href="about.html">About</a></li>
@@ -180,5 +221,12 @@
     </div>
   </section>
 
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+  </script>
+  
 </body>
 </html>
