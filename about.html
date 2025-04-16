@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - SMTOWN</title>
+  <style>
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f2f2f2;
+      color: #1a1a1a;
+    }
+
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+    }
+
+    .btn-outline {
+      border: 1px solid black;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('foto sm.jpg') no-repeat center center/cover;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero h1 {
+      color: #d9aee0;
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      position: relative;
+      z-index: 1;
+      /* border-bottom: 4px solid #2dd4bf; */
+      padding-bottom: 8px;
+    }
+
+    /* About Section */
+    .about-section {
+      background-color: #e8d5e8;
+      padding: 60px 20px;
+    }
+
+    .about-container {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .about-container img {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 8px;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .about-text h2 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    /* Testimonials */
+    .testimonials-section {
+      background-color: #dff0f0;
+      padding: 60px 20px;
+    }
+
+    .testimonials-section h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .testimonial-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 40px;
+    }
+
+    .testimonial {
+      background-color: transparent;
+    }
+
+    .stars::after {
+      content: '★★★★☆';
+      display: inline-block;
+      font-size: 20px;
+      color: #000;
+      margin-bottom: 12px;
+    }
+
+    .testimonial p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .profile img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .profile-name {
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1, .testimonials-section h1 {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">SMTOWN</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="btn-outline" href="signup.html">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>About Us</h1>
+  </section>
+
+  <!-- About Content -->
+  <section class="about-section">
+    <div class="about-container">
+      <img src="smtown.webp" alt="SMTOWN Building">
+      <div class="about-text">
+        <h3>We are a global leader in K-pop entertainment, shaping the industry with over decades of expertise in artist management, music production, and world-class performances.</h3>
+        <p>If you're looking for the best in music, artist development, and groundbreaking entertainment experiences, SMTOWN is here to bring you closer to the heart of K-pop. Our team of industry experts and visionary creators continuously push boundaries to redefine global entertainment.</p>
+      </div>
+      <div>
+        <div class="about-text">
+            <h2>Mission.</h2>
+            <p>Our mission is to lead the global entertainment industry by nurturing exceptional talent, producing innovative content, and connecting K-pop with fans worldwide.</p>
+            <h2>Vision.</h2>
+            <p>We envision a world where music transcends boundaries. SMTOWN is dedicated to shaping the future of entertainment by embracing creativity, diversity, and technological innovation.</p>
+          </div>
+        </div>
+    </div>
+  </section>
+
+</body>
+</html>
